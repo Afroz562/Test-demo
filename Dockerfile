@@ -1,7 +1,7 @@
 # The base image to use in the build.
 # This is mandatory and must be the first command in the file.
 # © https://jstobigdata.com
-FROM busybox:lates
+FROM busybox:latest
 # `Docker inspect` can be used to view image Labels.
 LABEL version = "1.0"
 LABEL author = "Afroz Syed
