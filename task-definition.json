@@ -6,7 +6,7 @@
     "containerDefinitions": [
         {
             "name": "demo-test",
-            "image": "846438144609.dkr.ecr.ap-northeast-1.amazonaws.com/demo-test",
+            "image": "846438144609.dkr.ecr.ap-northeast-1.amazonaws.com/demo-test:v1",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
@@ -24,6 +24,6 @@
     "cpu": "256",
     "executionRoleArn": "arn:aws:iam::846438144609:role/ecsTaskExecutionRole",
     "family": "demo-test",
-    "taskRoleArn": "",
+    "taskRoleArn": "arn:aws:iam::846438144609:role/ecsTaskExecutionRole",
     "placementConstraints": []
 }
