@@ -1,9 +1,9 @@
-FROM node:14
-WORKDIR /usr/src/app
-COPY package.json .
-CMD SET EXPO_DEBUG=true
-RUN npm config set package-lock false
-RUN npm install 
-COPY . .
-EXPOSE 80
-CMD ["node", "index.js"]
+# The base image to use in the build.
+# This is mandatory and must be the first command in the file.
+# © https://jstobigdata.com
+FROM busybox:lates
+# `Docker inspect` can be used to view image Labels.
+LABEL version = "1.0"
+LABEL author = "Afroz Syed
+CMD ["echo", "Welcome to - Zero to Hero in Docker"]
+# Now go back to the tutorial and follow the commands
