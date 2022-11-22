@@ -30,7 +30,7 @@ on:
   push:
     branches: [ "main" ]
 env:
-      AWS_REGION: ap-notheast-1                  # set this to your preferred AWS region, e.g. us-west-1
+      AWS_REGION: ap-northeast-1                  # set this to your preferred AWS region, e.g. us-west-1
       AWS_ACCESS_KEY_ID: AKIA4KE5FDJQ7AEDCEGP
       AWS_SECRET_ACCESS_KEY: sFEReVpMPOSjqwtQYWPyXoP8H3+Pd6PpErLcUh1w
       ECR_REPOSITORY: demo-test            # set this to your Amazon ECR repository name
@@ -61,8 +61,8 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #- name: Login to Amazon ECR
-      #id: login-ecr
-     #uses: aws-actions/amazon-ecr-login@v1
+    - name: Login to Amazon ECR
+      id: login-ecr
+     uses: aws-actions/amazon-ecr-login@v1
     
    
