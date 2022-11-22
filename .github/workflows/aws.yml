@@ -29,12 +29,22 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches: [ "main" ]
+env:
+      AWS_REGION: ap-notheast-1                  # set this to your preferred AWS region, e.g. us-west-1
+      AWS_ACCESS_KEY_ID: AKIA4KE5FDJQ7AEDCEGP
+      AWS_SECRET_ACCESS_KEY: sFEReVpMPOSjqwtQYWPyXoP8H3+Pd6PpErLcUh1w
+      ECR_REPOSITORY: demo-test            # set this to your Amazon ECR repository name
+      ECS_SERVICE: demo-test                # set this to your Amazon ECS service name
+      ECS_CLUSTER: demo-tes               # set this to your Amazon ECS cluster name
+      ECS_TASK_DEFINITION: demo-test  # set this to the path to your Amazon ECS task definition
+                                               # file, e.g. .aws/task-definition.json
+      CONTAINER_NAME: demo-test         # set this to the name of the container in the
+                                               # containerDefinitions section of your task definition
+   
+
 permissions:
   contents: read
-env: 
-     AWS_REGION:  ap-northeast-1 
-     AWS_ACCESS_KEY_ID: AKIA4KE5FDJQ7AEDCEGP
-     AWS_SECRET_ACCESS_KEY: sFEReVpMPOSjqwtQYWPyXoP8H3+Pd6PpErLcUh1w
+
 jobs:
   deploy:
     name: Deploy
@@ -51,5 +61,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-     
-
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/ama zon-ecr-login@aaf69d68aa3fb14c1d5a6be9ac61fe15b48453a2
+   
