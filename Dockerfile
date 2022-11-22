@@ -1,7 +1,7 @@
-FROM python:3-alpine
+FROM node:14
 WORKDIR /usr/src/app
+COPY package.json .
+RUN npm install 
+COPY . .
 EXPOSE 80
-COPY requirements.txt .
-RUN pip install -qr requirements.txt
-COPY server.py .
-CMD ["python3", "./server.py"]
+CMD ["node", "index.js"]
