@@ -1,29 +1,108 @@
 {
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:056584266475:task-definition/demo-test:1",
+    "containerDefinitions": [
+        {
+            "name": "test",
+            "image": "056584266475.dkr.ecr.us-east-1.amazonaws.com/demo-test:demo-test-example",
+            "cpu": 0,
+            "links": [],
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/demo-test",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "demo-test",
+    "taskRoleArn": "arn:aws:iam::056584266475:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::056584266475:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "inferenceAccelerators": [],
-    "containerDefinitions": [
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2022-11-23T08:44:10.516Z",
+    "registeredBy": "arn:aws:iam::056584266475:root",
+    "tags": [
         {
-            "name": "demo-test",
-            "image": "056584266475.dkr.ecr.us-east-1.amazonaws.com/demo-test:demo-test-example",
-            "resourceRequirements": null,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "80",
-                    "protocol": "tcp"
-                }
-                
-            ]
+            "key": "ecs:taskDefinition:createdFrom",
+            "value": "ecs-console-v2"
+        },
+        {
+            "key": "ecs:taskDefinition:stackId",
+            "value": "arn:aws:cloudformation:us-east-1:056584266475:stack/ECS-Console-V2-TaskDefinition-d7742484-1e9e-43db-b627-279272dc4c03/fb1ead10-6b0a-11ed-98a4-0e5a1ae84d33"
         }
-    ],
-    "volumes": [],
-    "networkMode": "awsvpc",
-    "memory": "512",
-    "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::056584266475:role/ecsTaskExecutionRole",
-    "family": "demo-test",
-    "taskRoleArn": "arn:aws:iam::056584266475:role/ecsTaskExecutionRole",
-    "placementConstraints": []
+    ]
 }
