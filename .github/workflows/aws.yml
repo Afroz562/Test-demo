@@ -72,6 +72,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
+        role-to-assume: arn:aws:iam::056584266475:role/ecsTaskExecutionRole
         task-definition: task-definition.json
         container-name: demo-test
         image: ${{ steps.build-image.outputs.image }}}
@@ -79,6 +80,7 @@ jobs:
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
+        role-to-assume: arn:aws:iam::056584266475:role/ecsTaskExecutionRole
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: demo-test  
         cluster: demo-test  
