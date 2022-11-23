@@ -74,7 +74,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::056584266475:role/ecsTaskExecutionRole
         task-definition: task-definition.json
-        container-name: demo-test
+        container-name: test
         image: ${{ steps.build-image.outputs.image }}}
       
     - name: Deploy Amazon ECS task definition
