@@ -81,5 +81,5 @@ jobs:
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: demo-test  
-        cluster: demo-tes  
+        cluster: demo-test  
         wait-for-service-stability: true
