@@ -6,7 +6,7 @@
     "containerDefinitions": [
         {
             "name": "demo-test",
-            "image": "056584266475.dkr.ecr.us-east-1.amazonaws.com/demo-test:demo-test-example"",
+            "image": "056584266475.dkr.ecr.us-east-1.amazonaws.com/demo-test:demo-test-example",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
